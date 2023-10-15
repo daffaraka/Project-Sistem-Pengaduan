@@ -16,16 +16,21 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
+            'nip' => rand(100000,200000),
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),
-            'role' => 'admin'
+            'role' => 'admin',
+            'status' => 'AKTIF'
         ]);
 
         User::create([
             'name' => 'User',
+            'nip' => rand(100000,200000),
             'email' => 'user@gmail.com',
             'password' => Hash::make('password'),
-            'role' => 'user'
+            'role' => 'user',
+            'status' => 'AKTIF'
+
         ]);
     }
 }

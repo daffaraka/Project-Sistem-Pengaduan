@@ -35,7 +35,7 @@
                             </li> --}}
 
                             <li class="">
-                                <a class="sidenav-item-link" href="analytics.html">
+                                <a class="sidenav-item-link" href="{{route('dashboard')}}">
                                     <span class="mdi mdi-monitor-screenshot"></span>
                                     <span class="nav-text">&nbsp; Dashboard</span>
                                 </a>
@@ -46,27 +46,27 @@
                                 @if (auth()->user()->role === 'admin')
                                     <li class="">
 
-                                        <a class="sidenav-item-link" href="analytics.html">
+                                        <a href="{{ route('user') }}" class="sidenav-item-link" href="analytics.html">
                                             <span class="mdi mdi-account-multiple"></span>
                                             <span class="nav-text">&nbsp; Kelola Pengguna</span>
                                         </a>
                                     </li>
 
 
-                                    <li class="">
+                                    {{-- <li class="">
                                         <a class="sidenav-item-link" href="analytics.html">
                                             <span class="mdi mdi-printer"></span>
                                             <span class="nav-text">&nbsp; Cetak Laporan</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 @else
-                                    <li class="">
+                                    {{-- <li class="">
 
                                         <a class="sidenav-item-link" href="analytics.html">
                                             <span class="mdi mdi-plus"></span>
                                             <span class="nav-text">&nbsp; Tambah Pengaduan</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 @endif
 
 
@@ -75,7 +75,7 @@
 
 
                             <li class="">
-                                <a class="sidenav-item-link" href="analytics.html">
+                                <a class="sidenav-item-link" href="{{ route('pengaduan') }}">
                                     <span class="mdi mdi-format-list-bulleted"></span>
                                     <span class="nav-text">&nbsp; Daftar Pengaduan</span>
                                 </a>
@@ -85,15 +85,20 @@
 
 
 
-                            <li class="">
+                            {{-- <li class="">
                                 <a class="sidenav-item-link" href="analytics.html">
                                     <span class="mdi mdi-key"></span>
                                     <span class="nav-text">&nbsp; Ubah Password</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="">
-                                <a class="sidenav-item-link" href="analytics.html">
+                                <a class="sidenav-item-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                     <span class="mdi mdi-logout"></span>
                                     <span class="nav-text">&nbsp; Logout</span>
                                 </a>
